@@ -19,6 +19,7 @@ img{max-width:100%;height:auto}
 /* Home */
 .is-home.home-ready #Blog1{display:none}
 .stories{display:flex;gap:18px;overflow-x:auto;padding:22px 0 8px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.stories i svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .stories a{flex:none;width:72px;text-align:center;font-size:12px;scroll-snap-align:start}
 .stories i{display:grid;place-items:center;width:64px;height:64px;margin:0 auto 6px;border-radius:50%;font:700 22px/1 var(--font);font-style:normal;background:var(--bg);box-shadow:0 0 0 2.5px var(--bg),0 0 0 4.5px var(--ac)}
 .home h2,#home h2{font-size:clamp(24px,3.4vw,34px);letter-spacing:-.03em;margin:44px 0 16px}
@@ -34,7 +35,7 @@ img{max-width:100%;height:auto}
 .bento .card:first-child{justify-content:flex-end;min-height:420px}
 .bento .card:first-child img{position:absolute;inset:0;height:100%;aspect-ratio:auto}
 .bento .card:first-child>div{position:relative;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.82));padding:90px 22px 22px}
-.bento .card:first-child h3{font-size:clamp(24px,3vw,38px);line-height:1.1}
+.bento .card:first-child h3{font-size:clamp(20px,2.4vw,30px);line-height:1.15;hyphens:none;overflow-wrap:normal}
 .bento .card:first-child small,.bento .card:first-child .meta{color:#e5e5ea}
 .trend{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:n}
 .trend li{counter-increment:n;border-top:2px solid var(--tx);padding-top:10px;font-weight:600;line-height:1.3}

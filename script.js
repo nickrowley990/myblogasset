@@ -21,6 +21,14 @@ lang;
 try{lang=localStorage.getItem('lang')||(navigator.language||'en').slice(0,2)}catch(e){lang='en'}
 if(L.indexOf(lang)<0)lang='en';
 function t(k){var i=K.indexOf(k);return i<0?k:T[lang][i]}
+var IC={world:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>',
+tech:'<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/>',
+business:'<path d="M3 17l6-6 4 4 8-8M15 7h6v6"/>',
+science:'<path d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 001.3 2.2h12.4a1.5 1.5 0 001.3-2.2L14 9V3M7.5 15h9"/>',
+health:'<path d="M3 12h4l2-5 4 10 2-5h6"/>',
+sports:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18M5.6 5.6c3.5 3.5 3.5 9.3 0 12.8M18.4 5.6c-3.5 3.5-3.5 9.3 0 12.8"/>',
+culture:'<path d="M3 21h18M5 21V10M9.5 21V10M14.5 21V10M19 21V10M2 10l10-7 10 7z"/>'};
+function ic(c){return'<svg viewBox="0 0 24 24" aria-hidden="true">'+IC[c]+'</svg>'}
 function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function rel(x){var m=(x-Date.now())/6e4,f=new Intl.RelativeTimeFormat(lang,{numeric:'auto'});
  if(m>-60)return f.format(Math.round(m),'minute');
@@ -50,7 +58,7 @@ function card(p){return'<a class="card" href="'+p.url+'">'+(p.img?'<img loading=
 /* home */
 var h=$('#home');
 if(h){
- h.innerHTML='<div class="stories">'+cats.map(function(c){return'<a href="/search/label/cat-'+c+'"><i>'+t(c).charAt(0)+'</i>'+t(c)+'</a>'}).join('')+'</div>'+
+ h.innerHTML='<div class="stories">'+cats.map(function(c){return'<a href="/search/label/cat-'+c+'"><i>'+ic(c)+'</i>'+t(c)+'</a>'}).join('')+'</div>'+
  '<section class="bento sk"></section><h2>'+t('trending')+'</h2><ol class="trend"></ol><h2>'+t('latest')+'</h2><div class="grid"></div><button class="btn" id="more" type="button">'+t('more')+'</button>';
  var lg=lang,next=22,g=h.querySelector('.grid'),b=$('#more');
  feed(lg,1,21).then(function(a){if(a.length)return a;lg='';return feed('',1,21)}).then(function(a){
